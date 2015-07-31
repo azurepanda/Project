@@ -1,0 +1,5 @@
+import math
+import matplotlib.pyplot as plt
+from matplotlib import rcParams
+rcParams["savefig.dpi"] = 100
+import numpy as np

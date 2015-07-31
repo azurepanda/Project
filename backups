@@ -1,0 +1,48 @@
+groupedLdota = [0] * 4;
+for n in range(0, 4):
+    groupedLdota[n]=([])
+groupedLdotb = [0] * 4;
+for n in range(0, 4):
+    groupedLdotb[n]=([])
+groupedLdotc = [0] * 4;
+for n in range(0, 4):
+    groupedLdotc[n]=([])
+
+pos = 0
+for d in datasorted[0]:
+    for n in range(1, 4):
+            if math.isnan(float(datasorted[n][pos])):
+                valid = False;
+    if valid:
+        for n in range(0, 4):
+            if 10**(10+n) > d and d >= 10**(9+n):
+                groupedLdota[n].append(Ldota[pos]);
+                groupedLdotb[n].append(Ldotb[pos]);
+                groupedLdotc[n].append(Ldotc[pos]);
+                #angle= abs(180/math.pi*math.acos(float(datasorted[1][pos])))
+                #if angle > 90:
+                #    angle = 180 - angle
+                #groupedLdota[n].append(angle);
+                #angle= abs(180/math.pi*math.acos(float(datasorted[2][pos])))
+                #if angle > 90:
+                #    angle = 180 - angle
+                #groupedLdotb[n].append(angle);
+                #angle= abs(180/math.pi*math.acos(float(datasorted[3][pos])))
+                #if angle > 90:
+                #    angle = 180 - angle
+                #groupedLdotc[n].append(angle);
+    pos = pos + 1
+print 'e9: ' + str(len(groupedLdota[0])), 'e10: ' + str(len(groupedLdota[1]))
+print 'e11: ' + str(len(groupedLdota[2])), 'e12: ' + str(len(groupedLdota[3]))
+
+positions = [15, 7, 8, 9]
+datasorted = [0] * len(positions)
+for n in range(0, len(positions)):
+    datasorted[n]=[]
+
+for d in data:   
+    pos = 0
+    for n in positions:   
+        datasorted[pos].append(float(d[n]))
+        pos = pos + 1
+print min(datasorted[0]), max(datasorted[0])
